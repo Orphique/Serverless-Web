@@ -49,6 +49,7 @@ In the project files, open the JS config section  (`barang.js`) and paste your p
 
 ```js
 const sheetURL = "https://docs.google.com/spreadsheets/d/.../pub?output=csv";
+``` 
 
 ---
 
@@ -70,6 +71,7 @@ const url = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdArYLbxhEmnK9Rzi3KWp0
   `&entry.103247122=${encodedBarang}` +
   `&entry.1697585335=${encodedTotalHarga}` +
   `&submit=Submit`;
+```
 
 ### 📌 What Each Part Means
 
