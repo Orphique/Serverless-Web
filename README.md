@@ -53,6 +53,67 @@ const sheetURL = "https://docs.google.com/spreadsheets/d/.../pub?output=csv";
 
 ---
 
+### 🖼 How to Host Product Images (Google Drive Method)
+
+Google Drive no longer allows direct image embedding, so we use thumbnail URLs instead.
+
+✅ Steps to Host Images
+1. **Create a folder** on Google Drive
+2. **Move your product images** into the folder
+3. **Right-click → Share → Anyone with the link: Viewer**
+4. Copy the link and paste it into the spreadsheet
+    - It can be any Google Drive link (`open?id=`, `file/d/.../view`, etc.)
+5. An Apps Script will automatically convert it into a **thumbnail link**:
+
+```js
+https://drive.google.com/thumbnail?id=<FILE_ID>
+```
+
+✔ Thumbnails load fast
+✔ Publicly accessible
+✔ No bandwidth or hotlinking issues
+✔ Fully compatible with browsers
+
+---
+
+### 🧩 Google Apps Script (Auto Thumbnail Converter)
+
+Google Drive links are inconsistent, so this script automatically converts any link you paste into columns **E, F, G** (Picture1–3).
+
+**Add this script to:**
+
+**Google Sheets → Extensions → Apps Script → paste & save**
+
+```js
+function onEdit(e) {
+  const sheet = e.source.getActiveSheet();
+  const editedRange = e.range;
+  const row = editedRange.getRow();
+  const col = editedRange.getColumn();
+
+  // Only run if edit happens in columns E (5), F (6), or G (7), and not in header
+  if (row > 1 && col >= 5 && col <= 7) {
+    const cell = sheet.getRange(row, col);
+    const value = cell.getValue();
+
+    if (value && !value.startsWith('https://drive.google.com/thumbnail')) {
+      const fileId = extractFileId(value);
+      if (fileId) {
+        const thumbnailUrl = `https://drive.google.com/thumbnail?id=${fileId}`;
+        cell.setValue(thumbnailUrl);
+      }
+    }
+  }
+}
+
+function extractFileId(input) {
+  if (!input) return null;
+  const match = input.match(/[-\w]{25,}/);
+  return match ? match[0] : null;
+}
+```
+
+---
 ## 📝 How Google Form Submission Works
 
 When the user submits an order, the website sends the data directly to a Google Form using a custom URL.  
