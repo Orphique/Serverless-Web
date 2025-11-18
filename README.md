@@ -23,10 +23,10 @@ In **Row 1**, write the column headers exactly like this **(case-sensitive):**
 
 Example rows:
 
-| Product       | Total | Price | Discount | Picture1            | Picture2            | Picture3            | Description              | No WA         |
-|---------------|-------|-------|----------|---------------------|---------------------|---------------------|--------------------------|---------------|
-| "Product A"   | 50    | 30000 | 10       | url-to-image-1.jpg  | url-to-image-2.jpg  | url-to-image-3.jpg  | "Deskripsi produk A"     | 6281234567890 |
-| "Product B"   | 20    | 45000 | 0        | url-to-image-1.jpg  |                     |                     | "Deskripsi produk B"     | 6289876543210 |
+| Product       | Total | Price | Discount | Picture1            | Picture2            | Picture3            | Description              | No WA : 6281234567890|
+|---------------|-------|-------|----------|---------------------|---------------------|---------------------|--------------------------|----------------------|
+| "Product A"   | 50    | 30000 | 10       | url-to-image-1.jpg  | url-to-image-2.jpg  | url-to-image-3.jpg  | "Deskripsi produk A"     |                      |
+| "Product B"   | 20    | 45000 | 0        | url-to-image-1.jpg  |                     |                     | "Deskripsi produk B"     |                      |
 
 ### 2. Make the Sheet Public
 1. Click **Share**
