@@ -2,7 +2,7 @@ import { computed, watch } from 'vue';
 import Papa from 'papaparse'
 
 export async function fetchCSVData(items, originalList, progress, loading, no_WA){
-  const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrGSG8Z8tG17P4XMyD-isiHjbezV-T49oFE0ARJnVZqdMOK0iJDWYtuWTfiGb65HsDc0Ae0C2b7JV-/pubhtml";
+  const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrGSG8Z8tG17P4XMyD-isiHjbezV-T49oFE0ARJnVZqdMOK0iJDWYtuWTfiGb65HsDc0Ae0C2b7JV-/pub?gid=0&single=true&output=csv";
   loading.value = true;
   progress.value = 0;
 
@@ -26,15 +26,14 @@ export async function fetchCSVData(items, originalList, progress, loading, no_WA
 
     const parsed = Papa.parse(data, { header: true });
     items.value = parsed.data.map(row => ({
-      barang: row['Barang']?.trim() || '',
-      jumlah: row['Jumlah']?.trim() || '',
-      harga: row['Harga Asli']?.trim() || '',
-      keterangan: row['Keterangan']?.trim().replace(/^"(.*)"$/, '$1') || '',
-      diskon: row['Diskon']?.trim() || '',
-      gambar: [row['Gambar1'], row['Gambar2'], row['Gambar3']].map(g => g?.trim() || ''),
+      barang: row['Product']?.trim() || '',
+      jumlah: row['Total']?.trim() || '',
+      harga: row['Price']?.trim() || '',
+      keterangan: row['Description']?.trim().replace(/^"(.*)"$/, '$1') || '',
+      diskon: row['Discount']?.trim() || '',
+      gambar: [row['Picture1'], row['Picture2'], row['Picture3']].map(g => g?.trim() || ''),
     }));
     originalList.value = [...items.value];
- 
     progress.value = 100;
   } catch (error) {
     console.error("Error fetching CSV:", error);

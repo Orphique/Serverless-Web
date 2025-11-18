@@ -175,7 +175,7 @@ function flashCartAnimation() {
         <div class="header-wrapper">
             <header class="header-container">
                 <div class="header-brand">
-                    <img src= "/src/assets/Logo.webp" loading="eager" class="company-logo" alt="Logo">
+                    <img src= "/src/assets/Logo.webp" loading="lazy" class="company-logo" alt="Logo">
                     <h3 class="company-name hide-on-small"> Company name</h3>
                 </div>
                 
@@ -190,7 +190,7 @@ function flashCartAnimation() {
                     </div>
                     <div class="keranjang" :class="{ 'cart-animate': animateCart }" @click="keranjang.length !== 0 && (showKeranjang = true)">
                         <h5 v-if="totalJumlah > 0"> {{ totalJumlah }}</h5>
-                        <img src="/src/assets/shopping-cart.svg" loading="eager" alt="keranjang">    
+                        <img src="/src/assets/shopping-cart.svg" loading="lazy" alt="keranjang">    
                     </div>
                 </div>
             </header>
