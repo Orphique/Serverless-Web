@@ -50,7 +50,7 @@ function kirimPesan() {
     const encodedKodepos = encodeURIComponent(form.value.kodepos);
     const encodedBarang = encodeURIComponent(keranjang.value.map(item => `${item.barang} (${item.jumlah}xRp${item.hargaAsli})`).join(', '));
     const encodedTotalHarga = encodeURIComponent("Rp" + totalHarga.value);
-    const url = `https://forms.gle/n99cnEnbFXaCCZ4F9/formResponse` +
+    const url = `https://docs.google.com/forms/u/0/d/e/1FAIpQLSdArYLbxhEmnK9Rzi3KWp0oEhxUdFOHq9Q64yLxqVpY7mYoVw/formResponse` +
     `?entry.1397467379=${encodedNama}` +
     `&entry.1515742534=${encodedAlamat}` +
     `&entry.1477140648=${encodedKelurahan}` +
