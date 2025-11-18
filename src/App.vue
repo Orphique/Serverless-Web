@@ -373,8 +373,8 @@ function flashCartAnimation() {
         <transition name="fade-bottom">
             <div class="footer">
                 <img src="/src/assets/toko.webp" alt="Background" loading="lazy" class="footer-background"/>
-                <h3> MELAYANI PENGIRIMAN DAERAH SURAKARTA !</h3>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247.20928705844014!2d110.8409321674591!3d-7.536907099999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a16c57b248aff%3A0x60fe3b1d749968d4!2sToko%20Mucharom%20Jaya!5e0!3m2!1sen!2sid!4v1742816760679!5m2!1sen!2sid" title="Lokasi Toko" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <h3> MELAYANI PENGIRIMAN !</h3>
+                <iframe src="https://www.google.com/maps/" title="Lokasi Toko" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </transition>
     </footer>
