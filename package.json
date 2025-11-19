@@ -1,5 +1,6 @@
 {
-  "name": "vue",
+  "homepage" : "https://orphique.github.io/",
+  "name": "severless-web",
   "private": true,
   "version": "0.0.0",
   "type": "module",
